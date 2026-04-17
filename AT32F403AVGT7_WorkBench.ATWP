@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Root>
+    <MCUInfo>
+        <MCUSerials>AT32F403A</MCUSerials>
+        <MCUName>AT32F403AVGT7</MCUName>
+        <MCUPackage>LQFP100</MCUPackage>
+    </MCUInfo>
+    <ADC1>
+        <Mode>
+            <ModeSub name="IN0" value="TRUE"/>
+        </Mode>
+        <Parameters>
+            <ParametersSub name="OrdinaryTriggerSource" value="ADC12_ORDINARY_TRIG_SOFTWARE"/>
+            <ParametersSub name="NbrOfOrdinarySequence" value="3"/>
+            <ParametersSub name="Channel_OrdinarySequence_1" value="ADC_CHANNEL_0"/>
+            <ParametersSub name="SamplingTime_OrdinarySequence_1" value="ADC_SAMPLETIME_7_5"/>
+            <ParametersSub name="Channel_OrdinarySequence_2" value="ADC_CHANNEL_0"/>
+            <ParametersSub name="SamplingTime_OrdinarySequence_2" value="ADC_SAMPLETIME_7_5"/>
+            <ParametersSub name="Channel_OrdinarySequence_3" value="ADC_CHANNEL_0"/>
+            <ParametersSub name="SamplingTime_OrdinarySequence_3" value="ADC_SAMPLETIME_7_5"/>
+        </Parameters>
+    </ADC1>
+    <CRM>
+        <Mode>
+            <ModeSub name="HEXT" value="HEXT-External-Oscillator"/>
+        </Mode>
+        <Parameters>
+            <ParametersSub name="HEXT" value="HEXT_CRYSTAL"/>
+        </Parameters>
+    </CRM>
+    <DAC>
+        <Mode>
+            <ModeSub name="DAC_OUT1" value="TRUE"/>
+        </Mode>
+    </DAC>
+    <DEBUG>
+        <Mode>
+            <ModeSub name="Debug interface" value="SWD"/>
+        </Mode>
+    </DEBUG>
+    <TMR1>
+        <Mode>
+            <ModeSub name="Channel1 mode" value="Output_CH1"/>
+            <ModeSub name="Activated" value="TRUE"/>
+        </Mode>
+        <Parameters>
+            <ParametersSub name="DividerValue" value="4799"/>
+            <ParametersSub name="Period" value="999"/>
+        </Parameters>
+    </TMR1>
+    <TMR2>
+        <Mode>
+            <ModeSub name="Channel1 mode" value="Input_direct_mode"/>
+            <ModeSub name="Channel2 mode" value="Input_direct_mode"/>
+            <ModeSub name="Activated" value="TRUE"/>
+            <ModeSub name="Enable XOR" value="TRUE"/>
+        </Mode>
+        <Parameters>
+            <ParametersSub name="PeriodBufferEnable" value="TRUE"/>
+            <ParametersSub name="InputPolarity_CH1" value="TMR_INPUT_BOTH_EDGE"/>
+            <ParametersSub name="InputPolarity_CH2" value="TMR_INPUT_BOTH_EDGE"/>
+        </Parameters>
+    </TMR2>
+    <TMR7>
+        <Mode>
+            <ModeSub name="Activated" value="TRUE"/>
+        </Mode>
+        <Parameters>
+            <ParametersSub name="DividerValue" value="999"/>
+            <ParametersSub name="Period" value="239"/>
+        </Parameters>
+    </TMR7>
+    <WDT>
+        <Mode>
+            <ModeSub name="WDT_State" value="TRUE"/>
+        </Mode>
+    </WDT>
+    <DMA>
+        <ADC1>
+            <ParametersSub name="Instance" value="DMA1_Channel1"/>
+        </ADC1>
+    </DMA>
+    <NVIC>
+        <SysTick_Handler>0;0;0</SysTick_Handler>
+        <FLASH_IRQHandler>0;0;0</FLASH_IRQHandler>
+        <CRM_IRQHandler>0;0;0</CRM_IRQHandler>
+        <DMA1_Channel1_IRQHandler>0;0;0</DMA1_Channel1_IRQHandler>
+        <ADC1_2_IRQHandler>0;0;0</ADC1_2_IRQHandler>
+        <TMR1_BRK_TMR9_IRQHandler>0;0;0</TMR1_BRK_TMR9_IRQHandler>
+        <TMR1_OVF_TMR10_IRQHandler>0;0;0</TMR1_OVF_TMR10_IRQHandler>
+        <TMR1_TRG_HALL_TMR11_IRQHandler>0;0;0</TMR1_TRG_HALL_TMR11_IRQHandler>
+        <TMR1_CH_IRQHandler>0;0;0</TMR1_CH_IRQHandler>
+        <TMR2_GLOBAL_IRQHandler>0;0;0</TMR2_GLOBAL_IRQHandler>
+        <TMR7_GLOBAL_IRQHandler>1;0;0</TMR7_GLOBAL_IRQHandler>
+    </NVIC>
+    <ClockConfiguration>
+        <rtcsel>0</rtcsel>
+        <hext>8.000000</hext>
+        <hextdiv>2</hextdiv>
+        <pllhextdiv>0</pllhextdiv>
+        <pllrcs>1</pllrcs>
+        <pllmult>60</pllmult>
+        <sclkselect>1</sclkselect>
+        <ahbdiv>1</ahbdiv>
+        <apb1div>2</apb1div>
+        <apb2div>2</apb2div>
+        <usbdiv>4.0</usbdiv>
+        <hicktousb>1</hicktousb>
+        <hicktosclk>0</hicktosclk>
+        <clkout>0</clkout>
+        <clkoutdiv>1</clkoutdiv>
+        <adcdiv>6</adcdiv>
+    </ClockConfiguration>
+    <PINInfo>
+        <PinSub pinname="HEXT_IN" signalname="CRM_HEXT_IN" signaltype="2"/>
+        <PinSub pinname="HEXT_OUT" signalname="CRM_HEXT_OUT" signaltype="2"/>
+        <PinSub pinname="PC0" signalname="GPIO_Input" signaltype="3"/>
+        <PinSub pinname="PC1" signalname="GPIO_Input" signaltype="3"/>
+        <PinSub pinname="PC2" signalname="GPIO_Input" signaltype="3"/>
+        <PinSub pinname="PC3" signalname="GPIO_Input" signaltype="3"/>
+        <PinSub pinname="PA0" signalname="ADC1_IN0" signaltype="3"/>
+        <PinSub pinname="PA1" signalname="GPIO_Input" signaltype="3"/>
+        <PinSub pinname="PA2" signalname="GPIO_Input" signaltype="3"/>
+        <PinSub pinname="PA3" signalname="GPIO_Input" signaltype="3"/>
+        <PinSub pinname="PA4" signalname="DAC_OUT1" signaltype="3"/>
+        <PinSub pinname="PA5" signalname="GPIO_Input" signaltype="3"/>
+        <PinSub pinname="PA6" signalname="GPIO_Input" signaltype="3"/>
+        <PinSub pinname="PA7" signalname="GPIO_Analog" signaltype="3"/>
+        <PinSub pinname="PC4" signalname="GPIO_Analog" signaltype="3"/>
+        <PinSub pinname="PC5" signalname="GPIO_Input" signaltype="3"/>
+        <PinSub pinname="PB0" signalname="GPIO_Input" signaltype="3"/>
+        <PinSub pinname="PB1" signalname="GPIO_Input" signaltype="3"/>
+        <PinSub pinname="PB2" signalname="GPIO_Output" signaltype="3"/>
+        <PinSub pinname="PE7" signalname="GPIO_Output" signaltype="3"/>
+        <PinSub pinname="PE8" signalname="GPIO_Output" signaltype="3"/>
+        <PinSub pinname="PE9" signalname="TMR1_CH1" signaltype="3"/>
+        <PinSub pinname="PE13" signalname="GPIO_Output" signaltype="3"/>
+        <PinSub pinname="PE14" signalname="GPIO_Output" signaltype="3"/>
+        <PinSub pinname="PE15" signalname="GPIO_Output" signaltype="3"/>
+        <PinSub pinname="PB12" signalname="GPIO_Input" signaltype="3"/>
+        <PinSub pinname="PB13" signalname="GPIO_Output" signaltype="3"/>
+        <PinSub pinname="PA13" signalname="DEBUG_JTMS_SWDIO" signaltype="2"/>
+        <PinSub pinname="PA14" signalname="DEBUG_JTCK_SWCLK" signaltype="2"/>
+        <PinSub pinname="PA15" signalname="TMR2_CH1" signaltype="2"/>
+        <PinSub pinname="PD0" signalname="GPIO_Output" signaltype="3"/>
+        <PinSub pinname="PD1" signalname="GPIO_Output" signaltype="3"/>
+        <PinSub pinname="PD2" signalname="GPIO_Output" signaltype="3"/>
+        <PinSub pinname="PD3" signalname="GPIO_Output" signaltype="3"/>
+        <PinSub pinname="PB3" signalname="TMR2_CH2" signaltype="2"/>
+    </PINInfo>
+    <ProjectInfomation>
+        <ProjectName>AT32F403AVGT7_WorkBench</ProjectName>
+        <ProjectLocation>E:/Workdir/A-Projects/Accel/firmware/AT32F403A_T2</ProjectLocation>
+        <ToolchainIDE>MDK_V5</ToolchainIDE>
+        <KeepUserCode>true</KeepUserCode>
+        <MinHeapSize>0x200</MinHeapSize>
+        <MinStackSize>0x400</MinStackSize>
+        <UseFirmware>true</UseFirmware>
+        <PackageVersion>V2.1.8</PackageVersion>
+    </ProjectInfomation>
+</Root>
