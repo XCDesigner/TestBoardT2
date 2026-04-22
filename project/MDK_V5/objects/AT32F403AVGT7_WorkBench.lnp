@@ -7,6 +7,8 @@
 ".\objects\mode_0.o"
 ".\objects\mode_1.o"
 ".\objects\mode_3.o"
+".\objects\mode_4.o"
+".\objects\mode_6.o"
 ".\objects\at32f403a_407_adc.o"
 ".\objects\at32f403a_407_crm.o"
 ".\objects\at32f403a_407_dac.o"

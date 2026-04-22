@@ -13,7 +13,7 @@
 #define LED_G_OFF()  do{ GPIOE->clr = GPIO_PINS_14; }while(0);
 #define LED_B_OFF()  do{ GPIOE->clr = GPIO_PINS_15; }while(0);
 
-void hall_test(void) {
+static void hall_test(void) {
   if(GPIOA->idt & GPIO_PINS_3)
     LED_3_OFF();
   else
@@ -43,6 +43,6 @@ void mode_1_process(void) {
         LED_B_OFF();
       }
     }
+		hall_test();
   }
-  hall_test();
 }

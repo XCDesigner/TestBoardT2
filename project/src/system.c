@@ -3,7 +3,9 @@
 extern void mode_0_process(void);
 extern void mode_1_process(void);
 extern void mode_3_process(void);
+extern void mode_4_process(void);
 extern void mode_5_process(void);
+extern void mode_6_process(void);
 
 uint32_t tick;
 void TMR7_GLOBAL_IRQHandler(void)
@@ -65,6 +67,8 @@ void DWT_DelayMs(uint32_t ms)
 #define MODE_3  0x03
 #define MODE_4  0x04
 #define MODE_5  0x05
+#define MODE_6  0x06
+
 void test_process(void) {
   uint8_t mode = 0;
   if ((GPIOC->idt & GPIO_PINS_0)) mode |= 1;
@@ -80,8 +84,14 @@ void test_process(void) {
     case MODE_3:
       mode_3_process();
     break;
+    case MODE_4:
+      mode_4_process();
+    break;
     case MODE_5:
       mode_5_process();
+    break;
+    case MODE_6:
+      mode_6_process();
     break;
     default:
       while(1);

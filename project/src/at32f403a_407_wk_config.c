@@ -242,7 +242,7 @@ void wk_gpio_config(void)
 
   gpio_init_struct.gpio_mode = GPIO_MODE_INPUT;
   gpio_init_struct.gpio_pins = GPIO_PINS_1 | GPIO_PINS_2 | GPIO_PINS_3 | GPIO_PINS_5 | GPIO_PINS_6;
-  gpio_init_struct.gpio_pull = GPIO_PULL_NONE;
+  gpio_init_struct.gpio_pull = GPIO_PULL_UP;
   gpio_init(GPIOA, &gpio_init_struct);
 
   gpio_init_struct.gpio_mode = GPIO_MODE_INPUT;

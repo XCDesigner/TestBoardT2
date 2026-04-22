@@ -26,7 +26,7 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "at32f403a_407_wk_config.h"
-
+#include "system.h"
 /* private includes ----------------------------------------------------------*/
 /* add user code begin private includes */
 
@@ -115,6 +115,7 @@ int main(void)
 
   /* add user code begin 2 */
   DWT_DelayInit();
+	
   /* add user code end 2 */
   while(1)
   {

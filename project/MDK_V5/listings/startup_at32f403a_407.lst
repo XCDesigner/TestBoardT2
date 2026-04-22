@@ -621,12 +621,11 @@ ARM Macro Assembler    Page 10
               00000400 
               00000200 
               00000000 
-Command Line: --debug --xref --diag_suppress=9931,A1950W --cpu=Cortex-M4.fp.sp 
---depend=.\objects\startup_at32f403a_407.d -o.\objects\startup_at32f403a_407.o 
--IC:\Users\Administrator\AppData\Local\Arm\Packs\ArteryTek\AT32F403A_407_DFP\2.
-1.9\Device\Include --predefine="__UVISION_VERSION SETA 542" --predefine="AT32F4
-03AVGT7 SETA 1" --list=.\listings\startup_at32f403a_407.lst startup_at32f403a_4
-07.s
+Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M4.fp.sp --depen
+d=.\objects\startup_at32f403a_407.d -o.\objects\startup_at32f403a_407.o -IC:\Us
+ers\lifen\AppData\Local\Arm\Packs\ArteryTek\AT32F403A_407_DFP\2.2.1\Device\Incl
+ude --predefine="__UVISION_VERSION SETA 535" --predefine="AT32F403AVGT7 SETA 1"
+ --list=.\listings\startup_at32f403a_407.lst startup_at32f403a_407.s
 
 
 
