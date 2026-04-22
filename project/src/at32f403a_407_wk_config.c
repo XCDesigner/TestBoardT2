@@ -410,14 +410,13 @@ void wk_tmr2_init(void)
   tmr_base_init(TMR2, 65535, 0);
   tmr_cnt_dir_set(TMR2, TMR_COUNT_UP);
   tmr_clock_source_div_set(TMR2, TMR_CLOCK_DIV1);
-  tmr_period_buffer_enable(TMR2, TRUE);
+  tmr_period_buffer_enable(TMR2, FALSE);
 
   /* configure primary mode settings */
   tmr_sub_sync_mode_set(TMR2, FALSE);
   tmr_primary_mode_select(TMR2, TMR_PRIMARY_SEL_RESET);
 
-  /* configure xor */
-  tmr_channel1_input_select(TMR2, TMR_CHANEL1_2_3_CONNECTED_C1IRAW_XOR);
+  tmr_encoder_mode_config(TMR2, TMR_ENCODER_MODE_C, TMR_INPUT_BOTH_EDGE, TMR_INPUT_BOTH_EDGE);
 
   /* configure channel 1 input settings */
   tmr_input_struct.input_channel_select = TMR_SELECT_CHANNEL_1;
