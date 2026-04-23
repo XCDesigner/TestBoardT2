@@ -1,2 +1,3 @@
 *.d
 *.o
+project/MDK_V5/*
