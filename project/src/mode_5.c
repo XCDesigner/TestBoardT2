@@ -7,7 +7,7 @@
 
 
 #define CENTER  (100000)
-#define DELTA   (100)
+#define DELTA   (2000)
 #define THRESHOLD_H (CENTER + DELTA)
 #define THRESHOLD_L (CENTER - DELTA)
 

@@ -65,13 +65,14 @@ Section Cross References
     at32f403a_407_wk_config.o(.text.wk_tmr2_init) refers to at32f403a_407_gpio.o(.text.gpio_default_para_init) for gpio_default_para_init
     at32f403a_407_wk_config.o(.text.wk_tmr2_init) refers to at32f403a_407_gpio.o(.text.gpio_init) for gpio_init
     at32f403a_407_wk_config.o(.text.wk_tmr2_init) refers to at32f403a_407_gpio.o(.text.gpio_pin_remap_config) for gpio_pin_remap_config
+    at32f403a_407_wk_config.o(.text.wk_tmr2_init) refers to at32f403a_407_tmr.o(.text.tmr_32_bit_function_enable) for tmr_32_bit_function_enable
     at32f403a_407_wk_config.o(.text.wk_tmr2_init) refers to at32f403a_407_tmr.o(.text.tmr_base_init) for tmr_base_init
     at32f403a_407_wk_config.o(.text.wk_tmr2_init) refers to at32f403a_407_tmr.o(.text.tmr_cnt_dir_set) for tmr_cnt_dir_set
     at32f403a_407_wk_config.o(.text.wk_tmr2_init) refers to at32f403a_407_tmr.o(.text.tmr_clock_source_div_set) for tmr_clock_source_div_set
     at32f403a_407_wk_config.o(.text.wk_tmr2_init) refers to at32f403a_407_tmr.o(.text.tmr_period_buffer_enable) for tmr_period_buffer_enable
     at32f403a_407_wk_config.o(.text.wk_tmr2_init) refers to at32f403a_407_tmr.o(.text.tmr_sub_sync_mode_set) for tmr_sub_sync_mode_set
     at32f403a_407_wk_config.o(.text.wk_tmr2_init) refers to at32f403a_407_tmr.o(.text.tmr_primary_mode_select) for tmr_primary_mode_select
-    at32f403a_407_wk_config.o(.text.wk_tmr2_init) refers to at32f403a_407_tmr.o(.text.tmr_channel1_input_select) for tmr_channel1_input_select
+    at32f403a_407_wk_config.o(.text.wk_tmr2_init) refers to at32f403a_407_tmr.o(.text.tmr_encoder_mode_config) for tmr_encoder_mode_config
     at32f403a_407_wk_config.o(.text.wk_tmr2_init) refers to at32f403a_407_tmr.o(.text.tmr_input_channel_init) for tmr_input_channel_init
     at32f403a_407_wk_config.o(.text.wk_tmr2_init) refers to at32f403a_407_tmr.o(.text.tmr_counter_enable) for tmr_counter_enable
     at32f403a_407_wk_config.o(.ARM.exidx.text.wk_tmr2_init) refers to at32f403a_407_wk_config.o(.text.wk_tmr2_init) for [Anonymous Symbol]
@@ -1068,7 +1069,6 @@ Removing Unused input sections from the image.
     Removing at32f403a_407_tmr.o(.ARM.exidx.text.tmr_output_channel_switch_set), (8 bytes).
     Removing at32f403a_407_tmr.o(.text.tmr_one_cycle_mode_enable), (18 bytes).
     Removing at32f403a_407_tmr.o(.ARM.exidx.text.tmr_one_cycle_mode_enable), (8 bytes).
-    Removing at32f403a_407_tmr.o(.text.tmr_32_bit_function_enable), (38 bytes).
     Removing at32f403a_407_tmr.o(.ARM.exidx.text.tmr_32_bit_function_enable), (8 bytes).
     Removing at32f403a_407_tmr.o(.text.tmr_overflow_request_source_set), (18 bytes).
     Removing at32f403a_407_tmr.o(.ARM.exidx.text.tmr_overflow_request_source_set), (8 bytes).
@@ -1081,6 +1081,7 @@ Removing Unused input sections from the image.
     Removing at32f403a_407_tmr.o(.ARM.exidx.text.tmr_input_channel_filter_set), (8 bytes).
     Removing at32f403a_407_tmr.o(.text.tmr_pwm_input_config), (278 bytes).
     Removing at32f403a_407_tmr.o(.ARM.exidx.text.tmr_pwm_input_config), (8 bytes).
+    Removing at32f403a_407_tmr.o(.text.tmr_channel1_input_select), (18 bytes).
     Removing at32f403a_407_tmr.o(.ARM.exidx.text.tmr_channel1_input_select), (8 bytes).
     Removing at32f403a_407_tmr.o(.text.tmr_input_channel_divider_set), (66 bytes).
     Removing at32f403a_407_tmr.o(.ARM.exidx.text.tmr_input_channel_divider_set), (8 bytes).
@@ -1119,7 +1120,6 @@ Removing Unused input sections from the image.
     Removing at32f403a_407_tmr.o(.ARM.exidx.text.tmr_external_clock_mode1_config), (8 bytes).
     Removing at32f403a_407_tmr.o(.text.tmr_external_clock_mode2_config), (18 bytes).
     Removing at32f403a_407_tmr.o(.ARM.exidx.text.tmr_external_clock_mode2_config), (8 bytes).
-    Removing at32f403a_407_tmr.o(.text.tmr_encoder_mode_config), (72 bytes).
     Removing at32f403a_407_tmr.o(.ARM.exidx.text.tmr_encoder_mode_config), (8 bytes).
     Removing at32f403a_407_tmr.o(.text.tmr_force_output_set), (66 bytes).
     Removing at32f403a_407_tmr.o(.ARM.exidx.text.tmr_force_output_set), (8 bytes).
@@ -1155,7 +1155,7 @@ Removing Unused input sections from the image.
     Removing system_at32f403a_407.o(.ARM.exidx.text.SystemInit), (8 bytes).
     Removing system_at32f403a_407.o(.ARM.exidx.text.system_core_clock_update), (8 bytes).
 
-501 unused section(s) (total 10064 bytes) removed from the image.
+500 unused section(s) (total 9972 bytes) removed from the image.
 
 ==============================================================================
 
@@ -1395,67 +1395,68 @@ Image Symbol Table
     [Anonymous Symbol]                       0x08001070   Section        0  mode_0.o(.text.test_pd)
     [Anonymous Symbol]                       0x08001108   Section        0  system.o(.text.test_process)
     [Anonymous Symbol]                       0x08001160   Section        0  mode_0.o(.text.test_z_limit)
-    [Anonymous Symbol]                       0x08001198   Section        0  at32f403a_407_tmr.o(.text.tmr_base_init)
-    [Anonymous Symbol]                       0x080011a8   Section        0  at32f403a_407_tmr.o(.text.tmr_brkdt_config)
-    [Anonymous Symbol]                       0x08001224   Section        0  at32f403a_407_tmr.o(.text.tmr_channel1_input_select)
-    [Anonymous Symbol]                       0x08001238   Section        0  at32f403a_407_tmr.o(.text.tmr_channel_value_set)
-    [Anonymous Symbol]                       0x0800125c   Section        0  at32f403a_407_tmr.o(.text.tmr_clock_source_div_set)
-    [Anonymous Symbol]                       0x08001270   Section        0  at32f403a_407_tmr.o(.text.tmr_cnt_dir_set)
-    [Anonymous Symbol]                       0x08001284   Section        0  at32f403a_407_tmr.o(.text.tmr_counter_enable)
-    [Anonymous Symbol]                       0x08001290   Section        0  at32f403a_407_tmr.o(.text.tmr_input_channel_init)
-    [Anonymous Symbol]                       0x08001444   Section        0  at32f403a_407_tmr.o(.text.tmr_output_channel_buffer_enable)
-    [Anonymous Symbol]                       0x08001488   Section        0  at32f403a_407_tmr.o(.text.tmr_output_channel_config)
-    [Anonymous Symbol]                       0x08001588   Section        0  at32f403a_407_tmr.o(.text.tmr_output_enable)
-    [Anonymous Symbol]                       0x0800159c   Section        0  at32f403a_407_tmr.o(.text.tmr_period_buffer_enable)
-    [Anonymous Symbol]                       0x080015b0   Section        0  at32f403a_407_tmr.o(.text.tmr_primary_mode_select)
-    [Anonymous Symbol]                       0x080015c4   Section        0  at32f403a_407_tmr.o(.text.tmr_repetition_counter_set)
-    [Anonymous Symbol]                       0x080015d0   Section        0  at32f403a_407_tmr.o(.text.tmr_sub_sync_mode_set)
-    [Anonymous Symbol]                       0x080015e4   Section        0  at32f403a_407_wdt.o(.text.wdt_counter_reload)
-    [Anonymous Symbol]                       0x080015f4   Section        0  at32f403a_407_wdt.o(.text.wdt_divider_set)
-    [Anonymous Symbol]                       0x08001608   Section        0  at32f403a_407_wdt.o(.text.wdt_register_write_enable)
-    [Anonymous Symbol]                       0x0800161c   Section        0  at32f403a_407_wdt.o(.text.wdt_reload_value_set)
-    [Anonymous Symbol]                       0x08001628   Section        0  at32f403a_407_wk_config.o(.text.wk_adc1_init)
-    [Anonymous Symbol]                       0x080016e0   Section        0  at32f403a_407_wk_config.o(.text.wk_dac_init)
-    [Anonymous Symbol]                       0x08001724   Section        0  at32f403a_407_wk_config.o(.text.wk_debug_config)
-    [Anonymous Symbol]                       0x08001738   Section        0  at32f403a_407_wk_config.o(.text.wk_dma1_channel1_init)
-    [Anonymous Symbol]                       0x08001780   Section        0  at32f403a_407_wk_config.o(.text.wk_dma_channel_config)
-    [Anonymous Symbol]                       0x08001788   Section        0  at32f403a_407_wk_config.o(.text.wk_gpio_config)
-    [Anonymous Symbol]                       0x08001864   Section        0  at32f403a_407_wk_config.o(.text.wk_nvic_config)
-    [Anonymous Symbol]                       0x08001878   Section        0  at32f403a_407_wk_config.o(.text.wk_periph_clock_config)
-    [Anonymous Symbol]                       0x08001900   Section        0  at32f403a_407_wk_config.o(.text.wk_system_clock_config)
-    [Anonymous Symbol]                       0x08001990   Section        0  at32f403a_407_wk_config.o(.text.wk_tmr1_init)
-    [Anonymous Symbol]                       0x08001a5c   Section        0  at32f403a_407_wk_config.o(.text.wk_tmr2_init)
-    [Anonymous Symbol]                       0x08001b2c   Section        0  at32f403a_407_wk_config.o(.text.wk_tmr7_init)
-    [Anonymous Symbol]                       0x08001b64   Section        0  at32f403a_407_wk_config.o(.text.wk_wdt_init)
-    $v0                                      0x08001b80   Number         0  d2f.o(x$fpl$d2f)
-    x$fpl$d2f                                0x08001b80   Section       98  d2f.o(x$fpl$d2f)
-    $v0                                      0x08001be2   Number         0  dcmpi.o(x$fpl$dcmpinf)
-    x$fpl$dcmpinf                            0x08001be2   Section       24  dcmpi.o(x$fpl$dcmpinf)
-    $v0                                      0x08001bfc   Number         0  deqf.o(x$fpl$deqf)
-    x$fpl$deqf                               0x08001bfc   Section      120  deqf.o(x$fpl$deqf)
-    $v0                                      0x08001c74   Number         0  dflt_clz.o(x$fpl$dfltu)
-    x$fpl$dfltu                              0x08001c74   Section       38  dflt_clz.o(x$fpl$dfltu)
-    $v0                                      0x08001c9c   Number         0  dgeqf.o(x$fpl$dgeqf)
-    x$fpl$dgeqf                              0x08001c9c   Section      120  dgeqf.o(x$fpl$dgeqf)
-    $v0                                      0x08001d14   Number         0  dleqf.o(x$fpl$dleqf)
-    x$fpl$dleqf                              0x08001d14   Section      120  dleqf.o(x$fpl$dleqf)
-    $v0                                      0x08001d8c   Number         0  dmul.o(x$fpl$dmul)
-    x$fpl$dmul                               0x08001d8c   Section      340  dmul.o(x$fpl$dmul)
-    $v0                                      0x08001ee0   Number         0  dnaninf.o(x$fpl$dnaninf)
-    x$fpl$dnaninf                            0x08001ee0   Section      156  dnaninf.o(x$fpl$dnaninf)
-    $v0                                      0x08001f7c   Number         0  dretinf.o(x$fpl$dretinf)
-    x$fpl$dretinf                            0x08001f7c   Section       12  dretinf.o(x$fpl$dretinf)
-    $v0                                      0x08001f88   Number         0  f2d.o(x$fpl$f2d)
-    x$fpl$f2d                                0x08001f88   Section       86  f2d.o(x$fpl$f2d)
-    $v0                                      0x08001fde   Number         0  dcmp.o(x$fpl$fcmp)
-    x$fpl$fcmp                               0x08001fde   Section       84  dcmp.o(x$fpl$fcmp)
-    $v0                                      0x08002032   Number         0  fnaninf.o(x$fpl$fnaninf)
-    x$fpl$fnaninf                            0x08002032   Section      140  fnaninf.o(x$fpl$fnaninf)
-    $v0                                      0x080020be   Number         0  fpinit.o(x$fpl$fpinit)
-    x$fpl$fpinit                             0x080020be   Section       26  fpinit.o(x$fpl$fpinit)
-    $v0                                      0x080020d8   Number         0  fretinf.o(x$fpl$fretinf)
-    x$fpl$fretinf                            0x080020d8   Section       10  fretinf.o(x$fpl$fretinf)
-    x$fpl$usenofp                            0x080020e2   Section        0  usenofp.o(x$fpl$usenofp)
+    [Anonymous Symbol]                       0x08001198   Section        0  at32f403a_407_tmr.o(.text.tmr_32_bit_function_enable)
+    [Anonymous Symbol]                       0x080011c0   Section        0  at32f403a_407_tmr.o(.text.tmr_base_init)
+    [Anonymous Symbol]                       0x080011d0   Section        0  at32f403a_407_tmr.o(.text.tmr_brkdt_config)
+    [Anonymous Symbol]                       0x0800124c   Section        0  at32f403a_407_tmr.o(.text.tmr_channel_value_set)
+    [Anonymous Symbol]                       0x08001270   Section        0  at32f403a_407_tmr.o(.text.tmr_clock_source_div_set)
+    [Anonymous Symbol]                       0x08001284   Section        0  at32f403a_407_tmr.o(.text.tmr_cnt_dir_set)
+    [Anonymous Symbol]                       0x08001298   Section        0  at32f403a_407_tmr.o(.text.tmr_counter_enable)
+    [Anonymous Symbol]                       0x080012a4   Section        0  at32f403a_407_tmr.o(.text.tmr_encoder_mode_config)
+    [Anonymous Symbol]                       0x080012ec   Section        0  at32f403a_407_tmr.o(.text.tmr_input_channel_init)
+    [Anonymous Symbol]                       0x080014a0   Section        0  at32f403a_407_tmr.o(.text.tmr_output_channel_buffer_enable)
+    [Anonymous Symbol]                       0x080014e4   Section        0  at32f403a_407_tmr.o(.text.tmr_output_channel_config)
+    [Anonymous Symbol]                       0x080015e4   Section        0  at32f403a_407_tmr.o(.text.tmr_output_enable)
+    [Anonymous Symbol]                       0x080015f8   Section        0  at32f403a_407_tmr.o(.text.tmr_period_buffer_enable)
+    [Anonymous Symbol]                       0x0800160c   Section        0  at32f403a_407_tmr.o(.text.tmr_primary_mode_select)
+    [Anonymous Symbol]                       0x08001620   Section        0  at32f403a_407_tmr.o(.text.tmr_repetition_counter_set)
+    [Anonymous Symbol]                       0x0800162c   Section        0  at32f403a_407_tmr.o(.text.tmr_sub_sync_mode_set)
+    [Anonymous Symbol]                       0x08001640   Section        0  at32f403a_407_wdt.o(.text.wdt_counter_reload)
+    [Anonymous Symbol]                       0x08001650   Section        0  at32f403a_407_wdt.o(.text.wdt_divider_set)
+    [Anonymous Symbol]                       0x08001664   Section        0  at32f403a_407_wdt.o(.text.wdt_register_write_enable)
+    [Anonymous Symbol]                       0x08001678   Section        0  at32f403a_407_wdt.o(.text.wdt_reload_value_set)
+    [Anonymous Symbol]                       0x08001684   Section        0  at32f403a_407_wk_config.o(.text.wk_adc1_init)
+    [Anonymous Symbol]                       0x0800173c   Section        0  at32f403a_407_wk_config.o(.text.wk_dac_init)
+    [Anonymous Symbol]                       0x08001780   Section        0  at32f403a_407_wk_config.o(.text.wk_debug_config)
+    [Anonymous Symbol]                       0x08001794   Section        0  at32f403a_407_wk_config.o(.text.wk_dma1_channel1_init)
+    [Anonymous Symbol]                       0x080017dc   Section        0  at32f403a_407_wk_config.o(.text.wk_dma_channel_config)
+    [Anonymous Symbol]                       0x080017e4   Section        0  at32f403a_407_wk_config.o(.text.wk_gpio_config)
+    [Anonymous Symbol]                       0x080018c0   Section        0  at32f403a_407_wk_config.o(.text.wk_nvic_config)
+    [Anonymous Symbol]                       0x080018d4   Section        0  at32f403a_407_wk_config.o(.text.wk_periph_clock_config)
+    [Anonymous Symbol]                       0x0800195c   Section        0  at32f403a_407_wk_config.o(.text.wk_system_clock_config)
+    [Anonymous Symbol]                       0x080019ec   Section        0  at32f403a_407_wk_config.o(.text.wk_tmr1_init)
+    [Anonymous Symbol]                       0x08001ab8   Section        0  at32f403a_407_wk_config.o(.text.wk_tmr2_init)
+    [Anonymous Symbol]                       0x08001b98   Section        0  at32f403a_407_wk_config.o(.text.wk_tmr7_init)
+    [Anonymous Symbol]                       0x08001bd0   Section        0  at32f403a_407_wk_config.o(.text.wk_wdt_init)
+    $v0                                      0x08001bec   Number         0  d2f.o(x$fpl$d2f)
+    x$fpl$d2f                                0x08001bec   Section       98  d2f.o(x$fpl$d2f)
+    $v0                                      0x08001c4e   Number         0  dcmpi.o(x$fpl$dcmpinf)
+    x$fpl$dcmpinf                            0x08001c4e   Section       24  dcmpi.o(x$fpl$dcmpinf)
+    $v0                                      0x08001c68   Number         0  deqf.o(x$fpl$deqf)
+    x$fpl$deqf                               0x08001c68   Section      120  deqf.o(x$fpl$deqf)
+    $v0                                      0x08001ce0   Number         0  dflt_clz.o(x$fpl$dfltu)
+    x$fpl$dfltu                              0x08001ce0   Section       38  dflt_clz.o(x$fpl$dfltu)
+    $v0                                      0x08001d08   Number         0  dgeqf.o(x$fpl$dgeqf)
+    x$fpl$dgeqf                              0x08001d08   Section      120  dgeqf.o(x$fpl$dgeqf)
+    $v0                                      0x08001d80   Number         0  dleqf.o(x$fpl$dleqf)
+    x$fpl$dleqf                              0x08001d80   Section      120  dleqf.o(x$fpl$dleqf)
+    $v0                                      0x08001df8   Number         0  dmul.o(x$fpl$dmul)
+    x$fpl$dmul                               0x08001df8   Section      340  dmul.o(x$fpl$dmul)
+    $v0                                      0x08001f4c   Number         0  dnaninf.o(x$fpl$dnaninf)
+    x$fpl$dnaninf                            0x08001f4c   Section      156  dnaninf.o(x$fpl$dnaninf)
+    $v0                                      0x08001fe8   Number         0  dretinf.o(x$fpl$dretinf)
+    x$fpl$dretinf                            0x08001fe8   Section       12  dretinf.o(x$fpl$dretinf)
+    $v0                                      0x08001ff4   Number         0  f2d.o(x$fpl$f2d)
+    x$fpl$f2d                                0x08001ff4   Section       86  f2d.o(x$fpl$f2d)
+    $v0                                      0x0800204a   Number         0  dcmp.o(x$fpl$fcmp)
+    x$fpl$fcmp                               0x0800204a   Section       84  dcmp.o(x$fpl$fcmp)
+    $v0                                      0x0800209e   Number         0  fnaninf.o(x$fpl$fnaninf)
+    x$fpl$fnaninf                            0x0800209e   Section      140  fnaninf.o(x$fpl$fnaninf)
+    $v0                                      0x0800212a   Number         0  fpinit.o(x$fpl$fpinit)
+    x$fpl$fpinit                             0x0800212a   Section       26  fpinit.o(x$fpl$fpinit)
+    $v0                                      0x08002144   Number         0  fretinf.o(x$fpl$fretinf)
+    x$fpl$fretinf                            0x08002144   Section       10  fretinf.o(x$fpl$fretinf)
+    x$fpl$usenofp                            0x0800214e   Section        0  usenofp.o(x$fpl$usenofp)
     .bss                                     0x20000008   Section       96  libspace.o(.bss)
     SystemCoreClockFreq                      0x20000068   Data           4  system.o(.bss.SystemCoreClockFreq)
     [Anonymous Symbol]                       0x20000068   Section        0  system.o(.bss.SystemCoreClockFreq)
@@ -1671,7 +1672,7 @@ Image Symbol Table
     adc_ordinary_part_mode_enable            0x080005e9   Thumb Code    18  at32f403a_407_adc.o(.text.adc_ordinary_part_mode_enable)
     adc_ordinary_software_trigger_enable     0x080005fd   Thumb Code    18  at32f403a_407_adc.o(.text.adc_ordinary_software_trigger_enable)
     clear                                    0x08000611   Thumb Code    12  mode_5.o(.text.clear)
-    compare                                  0x0800061d   Thumb Code    46  mode_5.o(.text.compare)
+    compare                                  0x0800061d   Thumb Code    48  mode_5.o(.text.compare)
     crm_adc_clock_div_set                    0x0800064d   Thumb Code    30  at32f403a_407_crm.o(.text.crm_adc_clock_div_set)
     crm_ahb_div_set                          0x0800066d   Thumb Code    26  at32f403a_407_crm.o(.text.crm_ahb_div_set)
     crm_apb1_div_set                         0x08000689   Thumb Code    26  at32f403a_407_crm.o(.text.crm_apb1_div_set)
@@ -1713,75 +1714,76 @@ Image Symbol Table
     test_pd                                  0x08001071   Thumb Code   152  mode_0.o(.text.test_pd)
     test_process                             0x08001109   Thumb Code    88  system.o(.text.test_process)
     test_z_limit                             0x08001161   Thumb Code    56  mode_0.o(.text.test_z_limit)
-    tmr_base_init                            0x08001199   Thumb Code    14  at32f403a_407_tmr.o(.text.tmr_base_init)
-    tmr_brkdt_config                         0x080011a9   Thumb Code   122  at32f403a_407_tmr.o(.text.tmr_brkdt_config)
-    tmr_channel1_input_select                0x08001225   Thumb Code    18  at32f403a_407_tmr.o(.text.tmr_channel1_input_select)
-    tmr_channel_value_set                    0x08001239   Thumb Code    34  at32f403a_407_tmr.o(.text.tmr_channel_value_set)
-    tmr_clock_source_div_set                 0x0800125d   Thumb Code    18  at32f403a_407_tmr.o(.text.tmr_clock_source_div_set)
-    tmr_cnt_dir_set                          0x08001271   Thumb Code    18  at32f403a_407_tmr.o(.text.tmr_cnt_dir_set)
-    tmr_counter_enable                       0x08001285   Thumb Code    10  at32f403a_407_tmr.o(.text.tmr_counter_enable)
-    tmr_input_channel_init                   0x08001291   Thumb Code   436  at32f403a_407_tmr.o(.text.tmr_input_channel_init)
-    tmr_output_channel_buffer_enable         0x08001445   Thumb Code    66  at32f403a_407_tmr.o(.text.tmr_output_channel_buffer_enable)
-    tmr_output_channel_config                0x08001489   Thumb Code   254  at32f403a_407_tmr.o(.text.tmr_output_channel_config)
-    tmr_output_enable                        0x08001589   Thumb Code    18  at32f403a_407_tmr.o(.text.tmr_output_enable)
-    tmr_period_buffer_enable                 0x0800159d   Thumb Code    18  at32f403a_407_tmr.o(.text.tmr_period_buffer_enable)
-    tmr_primary_mode_select                  0x080015b1   Thumb Code    18  at32f403a_407_tmr.o(.text.tmr_primary_mode_select)
-    tmr_repetition_counter_set               0x080015c5   Thumb Code    12  at32f403a_407_tmr.o(.text.tmr_repetition_counter_set)
-    tmr_sub_sync_mode_set                    0x080015d1   Thumb Code    18  at32f403a_407_tmr.o(.text.tmr_sub_sync_mode_set)
-    wdt_counter_reload                       0x080015e5   Thumb Code    16  at32f403a_407_wdt.o(.text.wdt_counter_reload)
-    wdt_divider_set                          0x080015f5   Thumb Code    18  at32f403a_407_wdt.o(.text.wdt_divider_set)
-    wdt_register_write_enable                0x08001609   Thumb Code    20  at32f403a_407_wdt.o(.text.wdt_register_write_enable)
-    wdt_reload_value_set                     0x0800161d   Thumb Code    12  at32f403a_407_wdt.o(.text.wdt_reload_value_set)
-    wk_adc1_init                             0x08001629   Thumb Code   182  at32f403a_407_wk_config.o(.text.wk_adc1_init)
-    wk_dac_init                              0x080016e1   Thumb Code    66  at32f403a_407_wk_config.o(.text.wk_dac_init)
-    wk_debug_config                          0x08001725   Thumb Code    18  at32f403a_407_wk_config.o(.text.wk_debug_config)
-    wk_dma1_channel1_init                    0x08001739   Thumb Code    70  at32f403a_407_wk_config.o(.text.wk_dma1_channel1_init)
-    wk_dma_channel_config                    0x08001781   Thumb Code     8  at32f403a_407_wk_config.o(.text.wk_dma_channel_config)
-    wk_gpio_config                           0x08001789   Thumb Code   220  at32f403a_407_wk_config.o(.text.wk_gpio_config)
-    wk_nvic_config                           0x08001865   Thumb Code    20  at32f403a_407_wk_config.o(.text.wk_nvic_config)
-    wk_periph_clock_config                   0x08001879   Thumb Code   134  at32f403a_407_wk_config.o(.text.wk_periph_clock_config)
-    wk_system_clock_config                   0x08001901   Thumb Code   144  at32f403a_407_wk_config.o(.text.wk_system_clock_config)
-    wk_tmr1_init                             0x08001991   Thumb Code   202  at32f403a_407_wk_config.o(.text.wk_tmr1_init)
-    wk_tmr2_init                             0x08001a5d   Thumb Code   208  at32f403a_407_wk_config.o(.text.wk_tmr2_init)
-    wk_tmr7_init                             0x08001b2d   Thumb Code    56  at32f403a_407_wk_config.o(.text.wk_tmr7_init)
-    wk_wdt_init                              0x08001b65   Thumb Code    28  at32f403a_407_wk_config.o(.text.wk_wdt_init)
-    __aeabi_d2f                              0x08001b81   Thumb Code     0  d2f.o(x$fpl$d2f)
-    _d2f                                     0x08001b81   Thumb Code    98  d2f.o(x$fpl$d2f)
-    __fpl_dcmp_Inf                           0x08001be3   Thumb Code    24  dcmpi.o(x$fpl$dcmpinf)
-    __aeabi_cdcmpeq                          0x08001bfd   Thumb Code     0  deqf.o(x$fpl$deqf)
-    _dcmpeq                                  0x08001bfd   Thumb Code   120  deqf.o(x$fpl$deqf)
-    __aeabi_ui2d                             0x08001c75   Thumb Code     0  dflt_clz.o(x$fpl$dfltu)
-    _dfltu                                   0x08001c75   Thumb Code    38  dflt_clz.o(x$fpl$dfltu)
-    __aeabi_cdcmpge                          0x08001c9d   Thumb Code     0  dgeqf.o(x$fpl$dgeqf)
-    _dcmpge                                  0x08001c9d   Thumb Code   120  dgeqf.o(x$fpl$dgeqf)
-    __aeabi_cdcmple                          0x08001d15   Thumb Code     0  dleqf.o(x$fpl$dleqf)
-    _dcmple                                  0x08001d15   Thumb Code   120  dleqf.o(x$fpl$dleqf)
-    __fpl_dcmple_InfNaN                      0x08001d77   Thumb Code     0  dleqf.o(x$fpl$dleqf)
-    __aeabi_dmul                             0x08001d8d   Thumb Code     0  dmul.o(x$fpl$dmul)
-    _dmul                                    0x08001d8d   Thumb Code   332  dmul.o(x$fpl$dmul)
-    __fpl_dnaninf                            0x08001ee1   Thumb Code   156  dnaninf.o(x$fpl$dnaninf)
-    __fpl_dretinf                            0x08001f7d   Thumb Code    12  dretinf.o(x$fpl$dretinf)
-    __aeabi_f2d                              0x08001f89   Thumb Code     0  f2d.o(x$fpl$f2d)
-    _f2d                                     0x08001f89   Thumb Code    86  f2d.o(x$fpl$f2d)
-    __aeabi_dcmpeq                           0x08001fdf   Thumb Code     0  dcmp.o(x$fpl$fcmp)
-    _deq                                     0x08001fdf   Thumb Code    14  dcmp.o(x$fpl$fcmp)
-    _dneq                                    0x08001fed   Thumb Code    14  dcmp.o(x$fpl$fcmp)
-    __aeabi_dcmpgt                           0x08001ffb   Thumb Code     0  dcmp.o(x$fpl$fcmp)
-    _dgr                                     0x08001ffb   Thumb Code    14  dcmp.o(x$fpl$fcmp)
-    __aeabi_dcmpge                           0x08002009   Thumb Code     0  dcmp.o(x$fpl$fcmp)
-    _dgeq                                    0x08002009   Thumb Code    14  dcmp.o(x$fpl$fcmp)
-    __aeabi_dcmple                           0x08002017   Thumb Code     0  dcmp.o(x$fpl$fcmp)
-    _dleq                                    0x08002017   Thumb Code    14  dcmp.o(x$fpl$fcmp)
-    __aeabi_dcmplt                           0x08002025   Thumb Code     0  dcmp.o(x$fpl$fcmp)
-    _dls                                     0x08002025   Thumb Code    14  dcmp.o(x$fpl$fcmp)
-    __fpl_fnaninf                            0x08002033   Thumb Code   140  fnaninf.o(x$fpl$fnaninf)
-    _fp_init                                 0x080020bf   Thumb Code    26  fpinit.o(x$fpl$fpinit)
-    __fplib_config_fpu_vfp                   0x080020d7   Thumb Code     0  fpinit.o(x$fpl$fpinit)
-    __fplib_config_pureend_doubles           0x080020d7   Thumb Code     0  fpinit.o(x$fpl$fpinit)
-    __fpl_fretinf                            0x080020d9   Thumb Code    10  fretinf.o(x$fpl$fretinf)
-    __I$use$fp                               0x080020e2   Number         0  usenofp.o(x$fpl$usenofp)
-    Region$$Table$$Base                      0x080020e4   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x08002104   Number         0  anon$$obj.o(Region$$Table)
+    tmr_32_bit_function_enable               0x08001199   Thumb Code    38  at32f403a_407_tmr.o(.text.tmr_32_bit_function_enable)
+    tmr_base_init                            0x080011c1   Thumb Code    14  at32f403a_407_tmr.o(.text.tmr_base_init)
+    tmr_brkdt_config                         0x080011d1   Thumb Code   122  at32f403a_407_tmr.o(.text.tmr_brkdt_config)
+    tmr_channel_value_set                    0x0800124d   Thumb Code    34  at32f403a_407_tmr.o(.text.tmr_channel_value_set)
+    tmr_clock_source_div_set                 0x08001271   Thumb Code    18  at32f403a_407_tmr.o(.text.tmr_clock_source_div_set)
+    tmr_cnt_dir_set                          0x08001285   Thumb Code    18  at32f403a_407_tmr.o(.text.tmr_cnt_dir_set)
+    tmr_counter_enable                       0x08001299   Thumb Code    10  at32f403a_407_tmr.o(.text.tmr_counter_enable)
+    tmr_encoder_mode_config                  0x080012a5   Thumb Code    72  at32f403a_407_tmr.o(.text.tmr_encoder_mode_config)
+    tmr_input_channel_init                   0x080012ed   Thumb Code   436  at32f403a_407_tmr.o(.text.tmr_input_channel_init)
+    tmr_output_channel_buffer_enable         0x080014a1   Thumb Code    66  at32f403a_407_tmr.o(.text.tmr_output_channel_buffer_enable)
+    tmr_output_channel_config                0x080014e5   Thumb Code   254  at32f403a_407_tmr.o(.text.tmr_output_channel_config)
+    tmr_output_enable                        0x080015e5   Thumb Code    18  at32f403a_407_tmr.o(.text.tmr_output_enable)
+    tmr_period_buffer_enable                 0x080015f9   Thumb Code    18  at32f403a_407_tmr.o(.text.tmr_period_buffer_enable)
+    tmr_primary_mode_select                  0x0800160d   Thumb Code    18  at32f403a_407_tmr.o(.text.tmr_primary_mode_select)
+    tmr_repetition_counter_set               0x08001621   Thumb Code    12  at32f403a_407_tmr.o(.text.tmr_repetition_counter_set)
+    tmr_sub_sync_mode_set                    0x0800162d   Thumb Code    18  at32f403a_407_tmr.o(.text.tmr_sub_sync_mode_set)
+    wdt_counter_reload                       0x08001641   Thumb Code    16  at32f403a_407_wdt.o(.text.wdt_counter_reload)
+    wdt_divider_set                          0x08001651   Thumb Code    18  at32f403a_407_wdt.o(.text.wdt_divider_set)
+    wdt_register_write_enable                0x08001665   Thumb Code    20  at32f403a_407_wdt.o(.text.wdt_register_write_enable)
+    wdt_reload_value_set                     0x08001679   Thumb Code    12  at32f403a_407_wdt.o(.text.wdt_reload_value_set)
+    wk_adc1_init                             0x08001685   Thumb Code   182  at32f403a_407_wk_config.o(.text.wk_adc1_init)
+    wk_dac_init                              0x0800173d   Thumb Code    66  at32f403a_407_wk_config.o(.text.wk_dac_init)
+    wk_debug_config                          0x08001781   Thumb Code    18  at32f403a_407_wk_config.o(.text.wk_debug_config)
+    wk_dma1_channel1_init                    0x08001795   Thumb Code    70  at32f403a_407_wk_config.o(.text.wk_dma1_channel1_init)
+    wk_dma_channel_config                    0x080017dd   Thumb Code     8  at32f403a_407_wk_config.o(.text.wk_dma_channel_config)
+    wk_gpio_config                           0x080017e5   Thumb Code   220  at32f403a_407_wk_config.o(.text.wk_gpio_config)
+    wk_nvic_config                           0x080018c1   Thumb Code    20  at32f403a_407_wk_config.o(.text.wk_nvic_config)
+    wk_periph_clock_config                   0x080018d5   Thumb Code   134  at32f403a_407_wk_config.o(.text.wk_periph_clock_config)
+    wk_system_clock_config                   0x0800195d   Thumb Code   144  at32f403a_407_wk_config.o(.text.wk_system_clock_config)
+    wk_tmr1_init                             0x080019ed   Thumb Code   202  at32f403a_407_wk_config.o(.text.wk_tmr1_init)
+    wk_tmr2_init                             0x08001ab9   Thumb Code   222  at32f403a_407_wk_config.o(.text.wk_tmr2_init)
+    wk_tmr7_init                             0x08001b99   Thumb Code    56  at32f403a_407_wk_config.o(.text.wk_tmr7_init)
+    wk_wdt_init                              0x08001bd1   Thumb Code    28  at32f403a_407_wk_config.o(.text.wk_wdt_init)
+    __aeabi_d2f                              0x08001bed   Thumb Code     0  d2f.o(x$fpl$d2f)
+    _d2f                                     0x08001bed   Thumb Code    98  d2f.o(x$fpl$d2f)
+    __fpl_dcmp_Inf                           0x08001c4f   Thumb Code    24  dcmpi.o(x$fpl$dcmpinf)
+    __aeabi_cdcmpeq                          0x08001c69   Thumb Code     0  deqf.o(x$fpl$deqf)
+    _dcmpeq                                  0x08001c69   Thumb Code   120  deqf.o(x$fpl$deqf)
+    __aeabi_ui2d                             0x08001ce1   Thumb Code     0  dflt_clz.o(x$fpl$dfltu)
+    _dfltu                                   0x08001ce1   Thumb Code    38  dflt_clz.o(x$fpl$dfltu)
+    __aeabi_cdcmpge                          0x08001d09   Thumb Code     0  dgeqf.o(x$fpl$dgeqf)
+    _dcmpge                                  0x08001d09   Thumb Code   120  dgeqf.o(x$fpl$dgeqf)
+    __aeabi_cdcmple                          0x08001d81   Thumb Code     0  dleqf.o(x$fpl$dleqf)
+    _dcmple                                  0x08001d81   Thumb Code   120  dleqf.o(x$fpl$dleqf)
+    __fpl_dcmple_InfNaN                      0x08001de3   Thumb Code     0  dleqf.o(x$fpl$dleqf)
+    __aeabi_dmul                             0x08001df9   Thumb Code     0  dmul.o(x$fpl$dmul)
+    _dmul                                    0x08001df9   Thumb Code   332  dmul.o(x$fpl$dmul)
+    __fpl_dnaninf                            0x08001f4d   Thumb Code   156  dnaninf.o(x$fpl$dnaninf)
+    __fpl_dretinf                            0x08001fe9   Thumb Code    12  dretinf.o(x$fpl$dretinf)
+    __aeabi_f2d                              0x08001ff5   Thumb Code     0  f2d.o(x$fpl$f2d)
+    _f2d                                     0x08001ff5   Thumb Code    86  f2d.o(x$fpl$f2d)
+    __aeabi_dcmpeq                           0x0800204b   Thumb Code     0  dcmp.o(x$fpl$fcmp)
+    _deq                                     0x0800204b   Thumb Code    14  dcmp.o(x$fpl$fcmp)
+    _dneq                                    0x08002059   Thumb Code    14  dcmp.o(x$fpl$fcmp)
+    __aeabi_dcmpgt                           0x08002067   Thumb Code     0  dcmp.o(x$fpl$fcmp)
+    _dgr                                     0x08002067   Thumb Code    14  dcmp.o(x$fpl$fcmp)
+    __aeabi_dcmpge                           0x08002075   Thumb Code     0  dcmp.o(x$fpl$fcmp)
+    _dgeq                                    0x08002075   Thumb Code    14  dcmp.o(x$fpl$fcmp)
+    __aeabi_dcmple                           0x08002083   Thumb Code     0  dcmp.o(x$fpl$fcmp)
+    _dleq                                    0x08002083   Thumb Code    14  dcmp.o(x$fpl$fcmp)
+    __aeabi_dcmplt                           0x08002091   Thumb Code     0  dcmp.o(x$fpl$fcmp)
+    _dls                                     0x08002091   Thumb Code    14  dcmp.o(x$fpl$fcmp)
+    __fpl_fnaninf                            0x0800209f   Thumb Code   140  fnaninf.o(x$fpl$fnaninf)
+    _fp_init                                 0x0800212b   Thumb Code    26  fpinit.o(x$fpl$fpinit)
+    __fplib_config_fpu_vfp                   0x08002143   Thumb Code     0  fpinit.o(x$fpl$fpinit)
+    __fplib_config_pureend_doubles           0x08002143   Thumb Code     0  fpinit.o(x$fpl$fpinit)
+    __fpl_fretinf                            0x08002145   Thumb Code    10  fretinf.o(x$fpl$fretinf)
+    __I$use$fp                               0x0800214e   Number         0  usenofp.o(x$fpl$usenofp)
+    Region$$Table$$Base                      0x08002150   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x08002170   Number         0  anon$$obj.o(Region$$Table)
     system_core_clock                        0x20000000   Data           4  system_at32f403a_407.o(.data.system_core_clock)
     __libspace_start                         0x20000008   Data          96  libspace.o(.bss)
     __temporary_stack_top$libspace           0x20000068   Data           0  libspace.o(.bss)
@@ -1795,9 +1797,9 @@ Memory Map of the image
 
   Image Entry point : 0x08000185
 
-  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x00002110, Max: 0x00100000, ABSOLUTE)
+  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x00002178, Max: 0x00100000, ABSOLUTE)
 
-    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x00002104, Max: 0x00100000, ABSOLUTE)
+    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x00002170, Max: 0x00100000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -1911,8 +1913,7 @@ Memory Map of the image
     0x080005fc   0x080005fc   0x00000012   Code   RO          212    .text.adc_ordinary_software_trigger_enable  at32f403a_407_adc.o
     0x0800060e   0x0800060e   0x00000002   PAD
     0x08000610   0x08000610   0x0000000c   Code   RO           87    .text.clear         mode_5.o
-    0x0800061c   0x0800061c   0x0000002e   Code   RO           89    .text.compare       mode_5.o
-    0x0800064a   0x0800064a   0x00000002   PAD
+    0x0800061c   0x0800061c   0x00000030   Code   RO           89    .text.compare       mode_5.o
     0x0800064c   0x0800064c   0x0000001e   Code   RO          276    .text.crm_adc_clock_div_set  at32f403a_407_crm.o
     0x0800066a   0x0800066a   0x00000002   PAD
     0x0800066c   0x0800066c   0x0000001a   Code   RO          270    .text.crm_ahb_div_set  at32f403a_407_crm.o
@@ -1978,91 +1979,93 @@ Memory Map of the image
     0x08001070   0x08001070   0x00000098   Code   RO          101    .text.test_pd       mode_0.o
     0x08001108   0x08001108   0x00000058   Code   RO           75    .text.test_process  system.o
     0x08001160   0x08001160   0x00000038   Code   RO          103    .text.test_z_limit  mode_0.o
-    0x08001198   0x08001198   0x0000000e   Code   RO          590    .text.tmr_base_init  at32f403a_407_tmr.o
-    0x080011a6   0x080011a6   0x00000002   PAD
-    0x080011a8   0x080011a8   0x0000007a   Code   RO          690    .text.tmr_brkdt_config  at32f403a_407_tmr.o
-    0x08001222   0x08001222   0x00000002   PAD
-    0x08001224   0x08001224   0x00000012   Code   RO          642    .text.tmr_channel1_input_select  at32f403a_407_tmr.o
-    0x08001236   0x08001236   0x00000002   PAD
-    0x08001238   0x08001238   0x00000022   Code   RO          614    .text.tmr_channel_value_set  at32f403a_407_tmr.o
-    0x0800125a   0x0800125a   0x00000002   PAD
-    0x0800125c   0x0800125c   0x00000012   Code   RO          592    .text.tmr_clock_source_div_set  at32f403a_407_tmr.o
+    0x08001198   0x08001198   0x00000026   Code   RO          628    .text.tmr_32_bit_function_enable  at32f403a_407_tmr.o
+    0x080011be   0x080011be   0x00000002   PAD
+    0x080011c0   0x080011c0   0x0000000e   Code   RO          590    .text.tmr_base_init  at32f403a_407_tmr.o
+    0x080011ce   0x080011ce   0x00000002   PAD
+    0x080011d0   0x080011d0   0x0000007a   Code   RO          690    .text.tmr_brkdt_config  at32f403a_407_tmr.o
+    0x0800124a   0x0800124a   0x00000002   PAD
+    0x0800124c   0x0800124c   0x00000022   Code   RO          614    .text.tmr_channel_value_set  at32f403a_407_tmr.o
     0x0800126e   0x0800126e   0x00000002   PAD
-    0x08001270   0x08001270   0x00000012   Code   RO          594    .text.tmr_cnt_dir_set  at32f403a_407_tmr.o
+    0x08001270   0x08001270   0x00000012   Code   RO          592    .text.tmr_clock_source_div_set  at32f403a_407_tmr.o
     0x08001282   0x08001282   0x00000002   PAD
-    0x08001284   0x08001284   0x0000000a   Code   RO          582    .text.tmr_counter_enable  at32f403a_407_tmr.o
-    0x0800128e   0x0800128e   0x00000002   PAD
-    0x08001290   0x08001290   0x000001b4   Code   RO          634    .text.tmr_input_channel_init  at32f403a_407_tmr.o
-    0x08001444   0x08001444   0x00000042   Code   RO          620    .text.tmr_output_channel_buffer_enable  at32f403a_407_tmr.o
-    0x08001486   0x08001486   0x00000002   PAD
-    0x08001488   0x08001488   0x000000fe   Code   RO          606    .text.tmr_output_channel_config  at32f403a_407_tmr.o
-    0x08001586   0x08001586   0x00000002   PAD
-    0x08001588   0x08001588   0x00000012   Code   RO          672    .text.tmr_output_enable  at32f403a_407_tmr.o
-    0x0800159a   0x0800159a   0x00000002   PAD
-    0x0800159c   0x0800159c   0x00000012   Code   RO          618    .text.tmr_period_buffer_enable  at32f403a_407_tmr.o
-    0x080015ae   0x080015ae   0x00000002   PAD
-    0x080015b0   0x080015b0   0x00000012   Code   RO          646    .text.tmr_primary_mode_select  at32f403a_407_tmr.o
-    0x080015c2   0x080015c2   0x00000002   PAD
-    0x080015c4   0x080015c4   0x0000000c   Code   RO          596    .text.tmr_repetition_counter_set  at32f403a_407_tmr.o
-    0x080015d0   0x080015d0   0x00000012   Code   RO          658    .text.tmr_sub_sync_mode_set  at32f403a_407_tmr.o
+    0x08001284   0x08001284   0x00000012   Code   RO          594    .text.tmr_cnt_dir_set  at32f403a_407_tmr.o
+    0x08001296   0x08001296   0x00000002   PAD
+    0x08001298   0x08001298   0x0000000a   Code   RO          582    .text.tmr_counter_enable  at32f403a_407_tmr.o
+    0x080012a2   0x080012a2   0x00000002   PAD
+    0x080012a4   0x080012a4   0x00000048   Code   RO          684    .text.tmr_encoder_mode_config  at32f403a_407_tmr.o
+    0x080012ec   0x080012ec   0x000001b4   Code   RO          634    .text.tmr_input_channel_init  at32f403a_407_tmr.o
+    0x080014a0   0x080014a0   0x00000042   Code   RO          620    .text.tmr_output_channel_buffer_enable  at32f403a_407_tmr.o
+    0x080014e2   0x080014e2   0x00000002   PAD
+    0x080014e4   0x080014e4   0x000000fe   Code   RO          606    .text.tmr_output_channel_config  at32f403a_407_tmr.o
     0x080015e2   0x080015e2   0x00000002   PAD
-    0x080015e4   0x080015e4   0x00000010   Code   RO          702    .text.wdt_counter_reload  at32f403a_407_wdt.o
-    0x080015f4   0x080015f4   0x00000012   Code   RO          706    .text.wdt_divider_set  at32f403a_407_wdt.o
-    0x08001606   0x08001606   0x00000002   PAD
-    0x08001608   0x08001608   0x00000014   Code   RO          708    .text.wdt_register_write_enable  at32f403a_407_wdt.o
-    0x0800161c   0x0800161c   0x0000000c   Code   RO          704    .text.wdt_reload_value_set  at32f403a_407_wdt.o
-    0x08001628   0x08001628   0x000000b6   Code   RO           31    .text.wk_adc1_init  at32f403a_407_wk_config.o
-    0x080016de   0x080016de   0x00000002   PAD
-    0x080016e0   0x080016e0   0x00000042   Code   RO           27    .text.wk_dac_init   at32f403a_407_wk_config.o
-    0x08001722   0x08001722   0x00000002   PAD
-    0x08001724   0x08001724   0x00000012   Code   RO           15    .text.wk_debug_config  at32f403a_407_wk_config.o
-    0x08001736   0x08001736   0x00000002   PAD
-    0x08001738   0x08001738   0x00000046   Code   RO           33    .text.wk_dma1_channel1_init  at32f403a_407_wk_config.o
+    0x080015e4   0x080015e4   0x00000012   Code   RO          672    .text.tmr_output_enable  at32f403a_407_tmr.o
+    0x080015f6   0x080015f6   0x00000002   PAD
+    0x080015f8   0x080015f8   0x00000012   Code   RO          618    .text.tmr_period_buffer_enable  at32f403a_407_tmr.o
+    0x0800160a   0x0800160a   0x00000002   PAD
+    0x0800160c   0x0800160c   0x00000012   Code   RO          646    .text.tmr_primary_mode_select  at32f403a_407_tmr.o
+    0x0800161e   0x0800161e   0x00000002   PAD
+    0x08001620   0x08001620   0x0000000c   Code   RO          596    .text.tmr_repetition_counter_set  at32f403a_407_tmr.o
+    0x0800162c   0x0800162c   0x00000012   Code   RO          658    .text.tmr_sub_sync_mode_set  at32f403a_407_tmr.o
+    0x0800163e   0x0800163e   0x00000002   PAD
+    0x08001640   0x08001640   0x00000010   Code   RO          702    .text.wdt_counter_reload  at32f403a_407_wdt.o
+    0x08001650   0x08001650   0x00000012   Code   RO          706    .text.wdt_divider_set  at32f403a_407_wdt.o
+    0x08001662   0x08001662   0x00000002   PAD
+    0x08001664   0x08001664   0x00000014   Code   RO          708    .text.wdt_register_write_enable  at32f403a_407_wdt.o
+    0x08001678   0x08001678   0x0000000c   Code   RO          704    .text.wdt_reload_value_set  at32f403a_407_wdt.o
+    0x08001684   0x08001684   0x000000b6   Code   RO           31    .text.wk_adc1_init  at32f403a_407_wk_config.o
+    0x0800173a   0x0800173a   0x00000002   PAD
+    0x0800173c   0x0800173c   0x00000042   Code   RO           27    .text.wk_dac_init   at32f403a_407_wk_config.o
     0x0800177e   0x0800177e   0x00000002   PAD
-    0x08001780   0x08001780   0x00000008   Code   RO           35    .text.wk_dma_channel_config  at32f403a_407_wk_config.o
-    0x08001788   0x08001788   0x000000dc   Code   RO           19    .text.wk_gpio_config  at32f403a_407_wk_config.o
-    0x08001864   0x08001864   0x00000014   Code   RO           17    .text.wk_nvic_config  at32f403a_407_wk_config.o
-    0x08001878   0x08001878   0x00000086   Code   RO           13    .text.wk_periph_clock_config  at32f403a_407_wk_config.o
-    0x080018fe   0x080018fe   0x00000002   PAD
-    0x08001900   0x08001900   0x00000090   Code   RO           11    .text.wk_system_clock_config  at32f403a_407_wk_config.o
-    0x08001990   0x08001990   0x000000ca   Code   RO           21    .text.wk_tmr1_init  at32f403a_407_wk_config.o
-    0x08001a5a   0x08001a5a   0x00000002   PAD
-    0x08001a5c   0x08001a5c   0x000000d0   Code   RO           23    .text.wk_tmr2_init  at32f403a_407_wk_config.o
-    0x08001b2c   0x08001b2c   0x00000038   Code   RO           25    .text.wk_tmr7_init  at32f403a_407_wk_config.o
-    0x08001b64   0x08001b64   0x0000001c   Code   RO           29    .text.wk_wdt_init   at32f403a_407_wk_config.o
-    0x08001b80   0x08001b80   0x00000062   Code   RO          777    x$fpl$d2f           fz_wm.l(d2f.o)
-    0x08001be2   0x08001be2   0x00000018   Code   RO          822    x$fpl$dcmpinf       fz_wm.l(dcmpi.o)
-    0x08001bfa   0x08001bfa   0x00000002   PAD
-    0x08001bfc   0x08001bfc   0x00000078   Code   RO          792    x$fpl$deqf          fz_wm.l(deqf.o)
-    0x08001c74   0x08001c74   0x00000026   Code   RO          781    x$fpl$dfltu         fz_wm.l(dflt_clz.o)
-    0x08001c9a   0x08001c9a   0x00000002   PAD
-    0x08001c9c   0x08001c9c   0x00000078   Code   RO          794    x$fpl$dgeqf         fz_wm.l(dgeqf.o)
-    0x08001d14   0x08001d14   0x00000078   Code   RO          796    x$fpl$dleqf         fz_wm.l(dleqf.o)
-    0x08001d8c   0x08001d8c   0x00000154   Code   RO          787    x$fpl$dmul          fz_wm.l(dmul.o)
-    0x08001ee0   0x08001ee0   0x0000009c   Code   RO          798    x$fpl$dnaninf       fz_wm.l(dnaninf.o)
-    0x08001f7c   0x08001f7c   0x0000000c   Code   RO          800    x$fpl$dretinf       fz_wm.l(dretinf.o)
-    0x08001f88   0x08001f88   0x00000056   Code   RO          789    x$fpl$f2d           fz_wm.l(f2d.o)
-    0x08001fde   0x08001fde   0x00000054   Code   RO          779    x$fpl$fcmp          fz_wm.l(dcmp.o)
-    0x08002032   0x08002032   0x0000008c   Code   RO          802    x$fpl$fnaninf       fz_wm.l(fnaninf.o)
-    0x080020be   0x080020be   0x0000001a   Code   RO          893    x$fpl$fpinit        fz_wm.l(fpinit.o)
-    0x080020d8   0x080020d8   0x0000000a   Code   RO          804    x$fpl$fretinf       fz_wm.l(fretinf.o)
-    0x080020e2   0x080020e2   0x00000000   Code   RO          806    x$fpl$usenofp       fz_wm.l(usenofp.o)
-    0x080020e2   0x080020e2   0x00000002   PAD
-    0x080020e4   0x080020e4   0x00000020   Data   RO          968    Region$$Table       anon$$obj.o
+    0x08001780   0x08001780   0x00000012   Code   RO           15    .text.wk_debug_config  at32f403a_407_wk_config.o
+    0x08001792   0x08001792   0x00000002   PAD
+    0x08001794   0x08001794   0x00000046   Code   RO           33    .text.wk_dma1_channel1_init  at32f403a_407_wk_config.o
+    0x080017da   0x080017da   0x00000002   PAD
+    0x080017dc   0x080017dc   0x00000008   Code   RO           35    .text.wk_dma_channel_config  at32f403a_407_wk_config.o
+    0x080017e4   0x080017e4   0x000000dc   Code   RO           19    .text.wk_gpio_config  at32f403a_407_wk_config.o
+    0x080018c0   0x080018c0   0x00000014   Code   RO           17    .text.wk_nvic_config  at32f403a_407_wk_config.o
+    0x080018d4   0x080018d4   0x00000086   Code   RO           13    .text.wk_periph_clock_config  at32f403a_407_wk_config.o
+    0x0800195a   0x0800195a   0x00000002   PAD
+    0x0800195c   0x0800195c   0x00000090   Code   RO           11    .text.wk_system_clock_config  at32f403a_407_wk_config.o
+    0x080019ec   0x080019ec   0x000000ca   Code   RO           21    .text.wk_tmr1_init  at32f403a_407_wk_config.o
+    0x08001ab6   0x08001ab6   0x00000002   PAD
+    0x08001ab8   0x08001ab8   0x000000de   Code   RO           23    .text.wk_tmr2_init  at32f403a_407_wk_config.o
+    0x08001b96   0x08001b96   0x00000002   PAD
+    0x08001b98   0x08001b98   0x00000038   Code   RO           25    .text.wk_tmr7_init  at32f403a_407_wk_config.o
+    0x08001bd0   0x08001bd0   0x0000001c   Code   RO           29    .text.wk_wdt_init   at32f403a_407_wk_config.o
+    0x08001bec   0x08001bec   0x00000062   Code   RO          777    x$fpl$d2f           fz_wm.l(d2f.o)
+    0x08001c4e   0x08001c4e   0x00000018   Code   RO          822    x$fpl$dcmpinf       fz_wm.l(dcmpi.o)
+    0x08001c66   0x08001c66   0x00000002   PAD
+    0x08001c68   0x08001c68   0x00000078   Code   RO          792    x$fpl$deqf          fz_wm.l(deqf.o)
+    0x08001ce0   0x08001ce0   0x00000026   Code   RO          781    x$fpl$dfltu         fz_wm.l(dflt_clz.o)
+    0x08001d06   0x08001d06   0x00000002   PAD
+    0x08001d08   0x08001d08   0x00000078   Code   RO          794    x$fpl$dgeqf         fz_wm.l(dgeqf.o)
+    0x08001d80   0x08001d80   0x00000078   Code   RO          796    x$fpl$dleqf         fz_wm.l(dleqf.o)
+    0x08001df8   0x08001df8   0x00000154   Code   RO          787    x$fpl$dmul          fz_wm.l(dmul.o)
+    0x08001f4c   0x08001f4c   0x0000009c   Code   RO          798    x$fpl$dnaninf       fz_wm.l(dnaninf.o)
+    0x08001fe8   0x08001fe8   0x0000000c   Code   RO          800    x$fpl$dretinf       fz_wm.l(dretinf.o)
+    0x08001ff4   0x08001ff4   0x00000056   Code   RO          789    x$fpl$f2d           fz_wm.l(f2d.o)
+    0x0800204a   0x0800204a   0x00000054   Code   RO          779    x$fpl$fcmp          fz_wm.l(dcmp.o)
+    0x0800209e   0x0800209e   0x0000008c   Code   RO          802    x$fpl$fnaninf       fz_wm.l(fnaninf.o)
+    0x0800212a   0x0800212a   0x0000001a   Code   RO          893    x$fpl$fpinit        fz_wm.l(fpinit.o)
+    0x08002144   0x08002144   0x0000000a   Code   RO          804    x$fpl$fretinf       fz_wm.l(fretinf.o)
+    0x0800214e   0x0800214e   0x00000000   Code   RO          806    x$fpl$usenofp       fz_wm.l(usenofp.o)
+    0x0800214e   0x0800214e   0x00000002   PAD
+    0x08002150   0x08002150   0x00000020   Data   RO          968    Region$$Table       anon$$obj.o
 
 
-    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x08002108, Size: 0x00000680, Max: 0x00018000, ABSOLUTE)
+    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x08002170, Size: 0x00000680, Max: 0x00018000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x20000000   0x08002108   0x00000004   Data   RW          763    .data.system_core_clock  system_at32f403a_407.o
-    0x20000004   0x0800210c   0x00000004   PAD
+    0x20000000   0x08002170   0x00000004   Data   RW          763    .data.system_core_clock  system_at32f403a_407.o
+    0x20000004   0x08002174   0x00000004   PAD
     0x20000008        -       0x00000060   Zero   RW          835    .bss                c_w.l(libspace.o)
     0x20000068        -       0x00000004   Zero   RW           78    .bss.SystemCoreClockFreq  system.o
     0x2000006c        -       0x00000006   Zero   RW          107    .bss.adc_values     mode_0.o
     0x20000072        -       0x00000006   Zero   RW          131    .bss.adc_values     mode_3.o
     0x20000078        -       0x00000004   Zero   RW           77    .bss.tick           system.o
-    0x2000007c   0x0800210c   0x00000004   PAD
+    0x2000007c   0x08002174   0x00000004   PAD
     0x20000080        -       0x00000200   Zero   RW          750    HEAP                startup_at32f403a_407.o
     0x20000280        -       0x00000400   Zero   RW          749    STACK               startup_at32f403a_407.o
 
@@ -2081,22 +2084,22 @@ Image component sizes
        280          0          0          0          0      15362   at32f403a_407_gpio.o
         16          0          0          0          0        899   at32f403a_407_int.o
        202          0          0          0          0       7290   at32f403a_407_misc.o
-      1074         32          0          0          0      29457   at32f403a_407_tmr.o
+      1166         32          0          0          0      29457   at32f403a_407_tmr.o
         66          0          0          0          0       2403   at32f403a_407_wdt.o
-      1356          0          0          0          0      31709   at32f403a_407_wk_config.o
+      1370          0          0          0          0      31707   at32f403a_407_wk_config.o
         90          0          0          0          0       4988   main.o
        312         16          0          0          6      13753   mode_0.o
        152          0          0          0          0       4573   mode_1.o
        344         32          0          0          6       9342   mode_3.o
         42          0          0          0          0       4519   mode_4.o
-       152          0          0          0          0       9128   mode_5.o
+       154          0          0          0          0       9128   mode_5.o
         36          0          0          0          0       4507   mode_6.o
         64         26        388          0       1536        816   startup_at32f403a_407.o
        256          8          0          0          8      10427   system.o
        268         16          0          4          0       8301   system_at32f403a_407.o
 
     ----------------------------------------------------------------------
-      6368        144        420          4       1564     214828   Object Totals
+      6476        144        420          4       1564     214826   Object Totals
          0          0         32          0          0          0   (incl. Generated)
        126          0          0          0          8          0   (incl. Padding)
 
@@ -2161,15 +2164,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      8032        200        420          4       1660     215536   Grand Totals
-      8032        200        420          4       1660     215536   ELF Image Totals
-      8032        200        420          4          0          0   ROM Totals
+      8140        200        420          4       1660     215534   Grand Totals
+      8140        200        420          4       1660     215534   ELF Image Totals
+      8140        200        420          4          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                 8452 (   8.25kB)
+    Total RO  Size (Code + RO Data)                 8560 (   8.36kB)
     Total RW  Size (RW Data + ZI Data)              1664 (   1.63kB)
-    Total ROM Size (Code + RO Data + RW Data)       8456 (   8.26kB)
+    Total ROM Size (Code + RO Data + RW Data)       8564 (   8.36kB)
 
 ==============================================================================
 

@@ -406,8 +406,9 @@ void wk_tmr2_init(void)
   /* GPIO PIN remap */
   gpio_pin_remap_config(TMR2_GMUX_01, TRUE); 
 
+  tmr_32_bit_function_enable(TMR2, TRUE);
   /* configure counter settings */
-  tmr_base_init(TMR2, 65535, 0);
+  tmr_base_init(TMR2, 0xfffffff, 0);
   tmr_cnt_dir_set(TMR2, TMR_COUNT_UP);
   tmr_clock_source_div_set(TMR2, TMR_CLOCK_DIV1);
   tmr_period_buffer_enable(TMR2, FALSE);
