@@ -5,7 +5,7 @@
   气压传感器板
 */
 
-#define PUMP_ON() do{ GPIOB->clr = GPIO_PINS_13; }while(0)
+#define PUMP_ON() do{ GPIOB->scr = GPIO_PINS_13; }while(0)
 #define PUMP_OFF() do{ GPIOB->clr = GPIO_PINS_13; }while(0)
 
 static uint16_t adc_values[3];
@@ -22,12 +22,12 @@ float read_pump(void) {
 void mode_3_process(void) {
   float vol_off, vol_on;
   while(1) {
-    if(!(GPIOC->idt & GPIO_PINS_2)) {
+    if(!(KEY1_PORT->idt & KEY1_PIN)) {
       DWT_DelayMs(100);
-      if(!(GPIOA->idt & GPIO_PINS_2)) {
+      if(!(KEY1_PORT->idt & KEY1_PIN)) {
         LED_PASS_ON();
         LED_NG_ON();
-        while(!(GPIOA->idt & GPIO_PINS_2));
+        while(!(KEY1_PORT->idt & KEY1_PIN));
         LED_PASS_OFF();
         LED_NG_OFF();
         // Pump off
@@ -38,6 +38,7 @@ void mode_3_process(void) {
           continue;
         }
         PUMP_ON();
+        DWT_DelayMs(500);
         vol_on = read_pump();
         if ((vol_on - vol_off) < 1) {
           LED_NG_ON();
